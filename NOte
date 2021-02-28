@@ -1,0 +1,6 @@
+ take note that you'll have to use
+
+from flaskext.mysql import MySQL
+to import it on your project instead of using
+
+from flask_mysqldb import MySQL
