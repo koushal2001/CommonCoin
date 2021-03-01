@@ -13,17 +13,31 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
 
-
+def log_in(username):
+    pass
 @app.route("/register" , methods={'GET','POST'})
 def register():
     form=Register(request.form)
     users=table("users","Name","Email","username","password")
-    users.insert("first","em@se.com","bcudi","password")
 
-    if request.method == 'POST' and form.validate():
-        pass
+    if request.method == 'POST':# and form.validate():
+        name=form.name.data
+        email=form.email.data
+        username=form.username.data
+        password=form.password.data
+        confirm=form.confirm.data
+        if(password == confirm):
+            step=True
+        if step and isnewuser(username):
+            users.insert(name,email,username,password)     # implement SHA_256 hereTrue
+            log_in(username)
+            return render_template('dashboard.html')
+        else:
+            pass
+            #code to flash messages alert and other errors
 
     return render_template('register.html')
+
 @app.route("/")
 def index():
 
