@@ -6,14 +6,14 @@ class table:
         self.columns = "(%s)" %",".join(args)
         self.columnsList = args
 
-        if isnewtable(table_name):
-            create_data = ""
-            for column in self.columnsList:
-                create_data += "%s varchar(100)," %column
-
-            cur = mysql.connection.cursor() #create the table
-            cur.execute("CREATE TABLE %s(%s)" %(self.table, create_data[:len(create_data)-1]))
-            cur.close()
+        # if isnewtable(table_name):
+        #     create_data = ""
+        #     for column in self.columnsList:
+        #         create_data += "%s varchar(100)," %column
+        #
+        #     cur = mysql.connection.cursor() #create the table
+        #     cur.execute("CREATE TABLE IF NOT EXISTS %s(%s)" %(self.table, create_data[:len(create_data)-1]))
+        #     cur.close()
 
 
     def getall(self):

@@ -12,12 +12,13 @@ app.config['MYSQL_DB'] = 'commonchain'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
-mysql.init_app(app)
+
 
 @app.route("/register" , methods={'GET','POST'})
 def register():
     form=Register(request.form)
     users=table("users","Name","Email","username","password")
+    users.insert("first","em@se.com","bcudi","password")
 
     if request.method == 'POST' and form.validate():
         pass
