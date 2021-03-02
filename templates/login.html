@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+        margin: 0;
+        box-sizing: border-box;
+        padding:0;
+       }
+ 
+       body {
+         
+         background-color: #344a72;
+       }
+ 
+       a {
+         
+        text-decoration: none;
+       }
+       a:hover{
+         color: coral;
+       }
+ 
+       #container {
+         
+         margin:auto ;
+         padding: 100px;
+         text-align: justify;
+         max-width: fit-content;
+         border: 10px black;
+       }
+ 
+       .form-wrap {
+         
+         background-color: white;
+         padding:100px 100px;
+       }
+ 
+       .form-wrap h1, .form-wrap p {
+         
+         text-align: center;
+       }
+ 
+       .form-wrap .form-elements{
+         
+         padding: 10px 10px;
+         
+       }
+ 
+       .form-wrap .form-elementslabel {
+         
+         display: block;
+         font-size: larger;
+ 
+       }
+ 
+       .form-wrap .form-elements input {
+         
+         width:100%;
+         border-radius: 5px;
+         padding:10px 10px;
+       }
+ 
+       .form-wrap button {
+         
+         display:block;
+         background-color: #49c1a2 ;
+         margin:auto;
+         color: white;
+       }
+ 
+       .form-wrap button:hover {
+         
+         background-color:#37a08e ;
+       }
+       
+       footer {
+        
+        text-align: center;
+        color: white;
+       }
+ 
+       footer a {
+         
+         color:#49c1a2 ;
+       }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="form-wrap">
+            <form method="POST">
+                <h1>Log In</h1>
+                <div class="form-elements">
+                    <label for="username">Username</label><br>
+                    <input type="username" name="username" id="username" />
+                </div>
+                <div class="form-elements">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" />
+                </div>
+                <button type="submit" class="btn">Log In</button>
+            </form>
+        </div>
+        <footer>
+           <p> Dont have an account? </p>
+            <a href="#">Create new account</a>
+        </footer>
+    </div>
+</body>
+</html>

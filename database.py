@@ -18,7 +18,7 @@ class table:
 
     def getall(self):
         cur = mysql.connection.cursor()
-        #result = cur.execute("SELECT * FROM %s" % self.table)
+        result = cur.execute("SELECT * FROM %s" % self.table)
         data = cur.fetchall()
         return data
 
@@ -75,6 +75,7 @@ def isnewtable(name_table):
 def isnewuser(username):
     users = table("users", "name", "email", "username", "password")
     data = users.getall()
+    print(data,"\n")
     usernames = [user.get('username') for user in data]
 
     return False if username in usernames else True
