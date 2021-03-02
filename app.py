@@ -90,7 +90,7 @@ def dashboard():
     return render_template('dashboard.html',session=session)
 @app.route("/")
 def index():
-
+    check_chain()
     return render_template('index.html')
 
 if __name__ == '__main__':
