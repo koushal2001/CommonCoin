@@ -8,9 +8,9 @@ class table:
         self.columnsList = args
 
         if isnewtable(table_name):
-            create_data = ""
-            for column in self.columnsList:
-                create_data += "%s varchar(100)," %column
+            create_data = "".join(
+                "%s varchar(100)," % column for column in self.columnsList
+            )
             cur = mysql.connection.cursor() #create the table
             cur.execute("CREATE TABLE %s(%s)" %(self.table, create_data[:len(create_data)-1]))
             cur.close()
@@ -19,8 +19,7 @@ class table:
     def getall(self):
         cur = mysql.connection.cursor()
         result = cur.execute("SELECT * FROM %s" % self.table)
-        data = cur.fetchall()
-        return data
+        return cur.fetchall()
 
     def getone(self, search, value):
         data = {}
@@ -78,7 +77,7 @@ def isnewuser(username):
     print(data,"\n")
     usernames = [user.get('username') for user in data]
 
-    return False if username in usernames else True
+    return username not in usernames
 
 def data_blockchain():
     blockchain = Blockchain()
