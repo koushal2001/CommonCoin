@@ -1,4 +1,5 @@
 from hashlib import sha256
+import time
 
 def updatehash(*args):
     hashing_text = ""; h = sha256()
@@ -11,10 +12,11 @@ def updatehash(*args):
 
 class Block():
 
-    def __init__(self,number=0, previous_hash="0"*64, data=None, nonce=0):
+    def __init__(self,number=0, previous_hash="0"*64, data=None,time1=time.asctime( time.localtime(time.time())), nonce=0):
         self.data = data
         self.number = number
         self.previous_hash = previous_hash
+        self.time=time1
         self.nonce = nonce
 
     def hash(self):
@@ -26,12 +28,13 @@ class Block():
         )
 
     def __str__(self):
-        return str("Block#: %s\nHash: %s\nPrevious: %s\nData: %s\nNonce: %s\n" %(
+        return str("Block#: %s\nHash: %s\nPrevious: %s\nData: %s\nNonce: %s\nTime: %s\n" %(
             self.number,
             self.hash(),
             self.previous_hash,
             self.data,
-            self.nonce
+            self.nonce,
+            self.time,
             )
         )
 

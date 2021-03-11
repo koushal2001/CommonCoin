@@ -8,9 +8,9 @@ class Register(Form):
     password = PasswordField('Password', [validators.DataRequired(), validators.EqualTo('confirm', message='Passwords do not match')])
     confirm = PasswordField('Confirm Password')
 
-# class SendMoneyForm(Form):
-#     username = StringField('Username', [validators.Length(min=4,max=25)])
-#     amount = StringField('Amount', [validators.Length(min=1,max=50)])
-#
+class SendMoneyForm(Form):
+    username = StringField('Username', [validators.Length(min=4,max=25)])
+    amount = StringField('Amount', [validators.Length(min=1,max=50)])
+
 # class BuyForm(Form):
 #     amount = StringField('Amount', [validators.Length(min=1,max=50)])
