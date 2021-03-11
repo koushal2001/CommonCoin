@@ -1,5 +1,7 @@
 from app import mysql,session
 from Blockchain import Block,Blockchain
+class InvalidTransactionException(Exception): pass
+class InsufficientFundsException(Exception): pass
 
 class table:
     def __init__(self, table_name, *args):
@@ -84,7 +86,7 @@ def data_blockchain():
     blockchain = Blockchain()
     blockchain_table = table("blockchain", "number", "hash", "previous", "data", "nonce")
     for b in blockchain_table.getall():
-        blockchain.add(Block(int(b.get('number')), b.get('previous'), b.get('data'), int(b.get('nonce'))))
+        blockchain.add(Block(int(b.get('number')), b.get('previous'), b.get('data'), b.get('time'),int(b.get('nonce'))))
 
     return blockchain
 def update_blockchain(blockchain):
@@ -94,13 +96,61 @@ def update_blockchain(blockchain):
     for block in blockchain.chain:
         blockchain_data.insert(str(block.number), block.hash(), block.previous_hash, block.data, block.nonce)
 
-def check_chain():
-    blockchain = Blockchain()
-    database = ["hello", "goodbye", "test", " here"]
+# def check_chain():
+#     blockchain = Blockchain()
+#     database = ["hello", "goodbye", "test", " here"]
+#
+#     num = 0
+#
+#     for data in database:
+#         num += 1
+#         blockchain.mine(Block(number=num, data=data))
+#     update_blockchain(blockchain)
 
-    num = 0
+def send_money(sender, recipient, amount):
+    #verify that the amount is an integer or floating value
+    try: amount = float(amount)
+    except ValueError:
+        raise InvalidTransactionException("Invalid Transaction.")
 
-    for data in database:
-        num += 1
-        blockchain.mine(Block(number=num, data=data))
+    if amount > get_balance(sender) and sender != "ROOT":
+        raise InsufficientFundsException("Insufficient Funds.")
+
+    elif sender == recipient or amount <= 0.00:
+        raise InvalidTransactionException("Invalid Transaction.")
+
+    elif isnewuser(recipient):
+        raise InvalidTransactionException("User Does Not Exist.")
+
+    blockchain = data_blockchain()
+    number = len(blockchain.chain) + 1
+    data = "%s-->%s-->%s" %(sender, recipient, amount)
+    blockchain.mine(Block(number, data=data))
     update_blockchain(blockchain)
+
+#get the balance of a user
+def get_balance(username):
+    balance = 0.00
+    blockchain = data_blockchain()
+
+    #loop through the blockchain and update balance
+    for block in blockchain.chain:
+        data = block.data.split("-->")
+        if username == data[0]:
+            balance -= float(data[2])
+        elif username == data[1]:
+            balance += float(data[2])
+    return balance
+
+# def get_transactions(username):
+#
+#     blockchain = data_blockchain()
+#
+#     #loop through the blockchain and update balance
+#     for block in blockchain.chain:
+#         data = block.data.split("-->")
+#         if username == data[0]:
+#             balance -= float(data[2])
+#         elif username == data[1]:
+#             balance += float(data[2])
+#     return balance
