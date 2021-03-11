@@ -84,17 +84,15 @@ def isnewuser(username):
 
 def data_blockchain():
     blockchain = Blockchain()
-    blockchain_table = table("blockchain", "number", "hash", "previous", "data", "nonce")
+    blockchain_table = table("blockchain", "number", "hash", "previous", "data","time", "nonce")
     for b in blockchain_table.getall():
         blockchain.add(Block(int(b.get('number')), b.get('previous'), b.get('data'), b.get('time'),int(b.get('nonce'))))
 
     return blockchain
 def update_blockchain(blockchain):
-    blockchain_data = table("blockchain", "number", "hash", "previous", "data", "nonce")
-    blockchain_data.deleteall()
-
-    for block in blockchain.chain:
-        blockchain_data.insert(str(block.number), block.hash(), block.previous_hash, block.data, block.nonce)
+    blockchain_data = table("blockchain", "number", "hash", "previous", "data","time", "nonce")
+    block=blockchain.chain[-1]
+    blockchain_data.insert(str(block.number), block.hash(), block.previous_hash, block.data,block.time, block.nonce)
 
 # def check_chain():
 #     blockchain = Blockchain()
@@ -142,15 +140,24 @@ def get_balance(username):
             balance += float(data[2])
     return balance
 
-# def get_transactions(username):
-#
-#     blockchain = data_blockchain()
-#
-#     #loop through the blockchain and update balance
-#     for block in blockchain.chain:
-#         data = block.data.split("-->")
-#         if username == data[0]:
-#             balance -= float(data[2])
-#         elif username == data[1]:
-#             balance += float(data[2])
-#     return balance
+def get_transactions(username):
+
+    blockchain = data_blockchain()
+    transactions=[]
+    for block in blockchain.chain:
+        data = block.data.split("-->")
+        timestamp=block.time
+        data.append(timestamp)
+        if username == data[0] or username == data[1]:
+            transactions.append(data)
+    Formatted_transactions=[]
+    for data in transactions:
+        check = data
+        if check[0]==username:
+            Formatted_transactions.append("You Paid %s %s Commoncoins on %s" %(check[1], check[2],check[3]))
+        elif check[1]==username:
+            Formatted_transactions.append("You Received %s Commoncoins from %s on %s" %(check[2], check[0],check[3]))
+    if len(Formatted_transactions)==0:
+        Formatted_transactions.append("Empty")
+
+    return Formatted_transactions

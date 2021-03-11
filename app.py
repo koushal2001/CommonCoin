@@ -107,7 +107,8 @@ def dashboard():
     return render_template('dashboard.html',session=session)
 @app.route("/")
 def index():
-    # check_chain()
+    # send_money("Dummy","Dummy2","10")
+    print(get_transactions(session.get('username')))
     return render_template('index.html')
 
 if __name__ == '__main__':
