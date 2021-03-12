@@ -108,7 +108,7 @@ def dashboard():
 @app.route("/")
 def index():
     # send_money("Dummy","Dummy2","10")
-    print(get_transactions(session.get('username')))
+    print(get_balance(session.get('username')))
     return render_template('index.html')
 
 if __name__ == '__main__':

@@ -94,16 +94,16 @@ def update_blockchain(blockchain):
     block=blockchain.chain[-1]
     blockchain_data.insert(str(block.number), block.hash(), block.previous_hash, block.data,block.time, block.nonce)
 
-# def check_chain():
-#     blockchain = Blockchain()
-#     database = ["hello", "goodbye", "test", " here"]
-#
-#     num = 0
-#
-#     for data in database:
-#         num += 1
-#         blockchain.mine(Block(number=num, data=data))
-#     update_blockchain(blockchain)
+def check_chain():
+    blockchain = Blockchain()
+    database = ["hello", "goodbye", "test", " here"]
+
+    num = 0
+
+    for data in database:
+        num += 1
+        blockchain.mine(Block(number=num, data=data))
+    update_blockchain(blockchain)
 
 def send_money(sender, recipient, amount):
     #verify that the amount is an integer or floating value
