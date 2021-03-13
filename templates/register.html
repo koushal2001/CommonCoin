@@ -1,137 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Signup page</title>
+    <link rel="stylesheet" href="css/style.css">
 
     <style>
-      * {
-        
-       margin: 0;
-       box-sizing: border-box;
-       padding: 0;
-      }
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
 
-      body {
-        
-        background-color: #344a72;
-      }
+        body {
 
-      a {
-        
-       text-decoration: none;
-      }
-      a:hover{
-        color: coral;
-      }
+            background: url(https://www.nasdaq.com/sites/acquia.prod/files/2020/11/09/cryptoLP%20banner%203%20jpg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-      #container {
-        
-        margin:auto;
-        padding: 50px 50px;
-        text-align: justify;
-        max-width: fit-content;
-      }
+        a {
+            text-decoration: none;
+        }
 
-      .form-wrap {
-        
-        background-color: white;
-      }
+        a:hover {
+            color: coral;
+        }
 
-      .form-wrap h1, .form-wrap p {
-        
-        text-align: center;
-      }
+        #container {
+            margin: auto;
+            padding: 50px 50px;
+            text-align: justify;
+            max-width: fit-content;
+        }
 
-      .form-wrap .form-group {
-        
-        padding: 10px 10px;
-        
-      }
+        .form-wrap {
+            background-color: hsla(120, 17%, 91%, 0.5);
+        }
 
-      .form-wrap .form-group label {
-        
-        display: block;
-        font-size: larger;
+        .form-wrap h1,
+        .form-wrap p {
+            text-align: center;
 
-      }
+        }
 
-      .form-wrap .form-group input {
-        
-        width:100%;
-        border-radius: 5px;
-        padding:10px 10px;
-      }
+        .form-wrap .form-group {
+            padding: 10px 10px;
+        }
 
-      .form-wrap button {
-        
-        display:block;
-        background-color: #49c1a2 ;
-        margin:auto;
-        color: white;
-      }
+        .form-wrap .form-group label {
+            display: block;
+            font-weight: bold;
+            font-size: larger;
+        }
 
-      .form-wrap button:hover {
-        
-        background-color:#37a08e ;
-      }
+        .form-wrap .form-group input {
+            width: 100%;
+            border-radius: 5px;
+            padding: 10px 10px;
+        }
 
-      .form-wrap .bottom-text {
-        
-        font-size: smaller;
-      }
+        .form-wrap button {
+            display: block;
+            background-color: #49c1a2;
+            margin: auto;
+            color: white;
+        }
 
-      footer {
-        
-       text-align: center;
-       color: white;
-      }
+        .form-wrap button:hover {
+            background-color: #37a08e;
+        }
 
-      footer a {
-        
-        color:#49c1a2 ;
-      }
+        .form-wrap .bottom-text {
+            font-size: smaller;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+        }
+
+        footer a {
+            color: #49c1a2;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="img/logo.png" alt="logo"></div>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="tranhistory.html">Transaction History</a></li> -->
+            <!-- <li><a href="transaction.html">Make a Transaction</a></li> -->
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+        </ul>
+        <div class="rightnav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
     <div id="container">
-      <div class="form-wrap">
-        <h1>Sign Up</h1>
-        
-        <form method="POST">
-          <div class="form-group">
-            <label for="name"> Name</label><br>
-            <input  type="text" name="name" id="name" value={{request.form.name}} >
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label><br>
-            <input  type="email" name="email" id="email" value={{request.form.email}}>
-          </div>
-          <div class="form-group">
-            <label for="username">Username</label><br>
-            <input  type="username" name="username" id="username" value={{request.form.username}}>
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label><br>
-            <input  type="password" name="password" id="password" value={{request.form.password}}>
-          </div>
-          <div class="form-group">
-            <label for="password2">Confirm Password</label><br>
-            <input  type="password" name="confirm" id="password2" value={{request.form.password2}}>
-          </div>
-          <button type="submit" class="btn">Sign Up</button>
-          <p class="bottom-text">
-            By clicking the Sign Up button, you agree to our
-            <a href="#">Terms & Conditions</a> and
-            <a href="#">Privacy Policy</a>
-          </p>
-        </form>
-      </div>
-      <footer>
-        <p>Already have an account? <a href="#">Login Here</a></p>
-      </footer>
+        <div class="form-wrap">
+            <h1>Sign Up</h1>
+
+            <form>
+                <div class="form-group">
+                    <label for="first-name">First Name</label><br>
+                    <input type="text" name="firstName" id="first-name" />
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label><br>
+                    <input type="text" name="lastName" id="last-name" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" id="email" />
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label><br>
+                    <input type="username" name="email" id="username" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label><br>
+                    <input type="password" name="password" id="password" />
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label><br>
+                    <input type="password" name="pasword2" id="password2" />
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="bottom-text">
+                    By clicking the Sign Up button, you agree to our
+                    <a href="#">Terms & Conditions</a> and
+                    <a href="#">Privacy Policy</a>
+                </p>
+            </form>
+        </div>
+        <footer>
+            <p>Already have an account? <a href="login.html">Login Here</a></p>
+        </footer>
     </div>
-  </body>
+</body>
+
 </html>

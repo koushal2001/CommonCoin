@@ -1,115 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
         * {
-        margin: 0;
-        box-sizing: border-box;
-        padding:0;
-       }
- 
-       body {
-         
-         background-color: #344a72;
-       }
- 
-       a {
-         
-        text-decoration: none;
-       }
-       a:hover{
-         color: coral;
-       }
- 
-       #container {
-         
-         margin:auto ;
-         padding: 100px;
-         text-align: justify;
-         max-width: fit-content;
-         border: 10px black;
-       }
- 
-       .form-wrap {
-         
-         background-color: white;
-         padding:100px 100px;
-       }
- 
-       .form-wrap h1, .form-wrap p {
-         
-         text-align: center;
-       }
- 
-       .form-wrap .form-elements{
-         
-         padding: 10px 10px;
-         
-       }
- 
-       .form-wrap .form-elementslabel {
-         
-         display: block;
-         font-size: larger;
- 
-       }
- 
-       .form-wrap .form-elements input {
-         
-         width:100%;
-         border-radius: 5px;
-         padding:10px 10px;
-       }
- 
-       .form-wrap button {
-         
-         display:block;
-         background-color: #49c1a2 ;
-         margin:auto;
-         color: white;
-       }
- 
-       .form-wrap button:hover {
-         
-         background-color:#37a08e ;
-       }
-       
-       footer {
-        
-        text-align: center;
-        color: white;
-       }
- 
-       footer a {
-         
-         color:#49c1a2 ;
-       }
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+        }
+
+        body {
+            background-color: #344a72;
+            background: url(https://www.nasdaq.com/sites/acquia.prod/files/2020/11/09/cryptoLP%20banner%203%20jpg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: coral;
+        }
+
+        #container {
+            margin: auto;
+            margin-top: 0px;
+            padding: 100px;
+            text-align: justify;
+            max-width: fit-content;
+            border: 10px black;
+        }
+
+        .form-wrap {
+            background-color: hsla(120, 17%, 91%, 0.65);
+            <!-- background: url(https://i.pinimg.com/originals/49/bf/31/49bf313cbf6ba16e350a0a54152ec3cc.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 100px 100px;
+            -->padding: top 20px;
+        }
+
+        h1 {
+            color: rgb(14, 11, 11);
+        }
+
+        /* .label {
+            background-color: rgb(19, 11, 11);
+        } */
+
+        .form-wrap h1 {}
+
+        .form-wrap h1,
+        .form-wrap p {
+            text-align: center;
+            margin-top: -10px;
+        }
+
+        .form-wrap .form-elements {
+            padding: 30px 20px;
+            color:black;
+            }
+
+        .form-wrap .form-elements label {
+            display: block;
+            font-size: x-large;
+            /* background-color: black; */
+            font-weight: bold;
+
+        }
+
+        .form-wrap .form-elements input {
+            width: 100%;
+            border-radius: 5px;
+            padding: 10px 10px;
+
+        }
+        .form-wrap button {
+            display: block;
+            background-color: #49c1a2;
+            margin: auto;
+            color: white;
+            padding:10px;
+            border-radius: 2px;
+            /* border: white ; */
+        }
+        .form-wrap button:hover {
+            background-color: #37a08e;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+        }
+
+        footer a {
+            color: #49c1a2;
+        }
     </style>
 </head>
+
 <body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="img/logo.png" alt="logo"></div>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="tranhistory.html">Transaction History</a></li> -->
+            <!-- <li><a href="transaction.html">Make a Transaction</a></li> -->
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+             <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li><!--temporary -->
+        </ul>
+        <div class="rightnav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+    <!-- <div id="name">COMMONCHAIN</div> -->
     <div id="container">
         <div class="form-wrap">
-            <form method="POST">
+            <form>
                 <h1>Log In</h1>
                 <div class="form-elements">
-                    <label for="username">Username</label><br>
+                    <label for="username"><strong class="label">Username</strong></label><br>
                     <input type="username" name="username" id="username" />
                 </div>
                 <div class="form-elements">
-                    <label for="password">Password</label><br>
+                    <label for="password"><strong class="label">Password</strong></label><br>
                     <input type="password" name="password" id="password" />
                 </div>
-                <button type="submit" class="btn">Log In</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
         <footer>
-           <p> Dont have an account? </p>
+            <p> Dont have an account? </p>
             <a href="#">Create new account</a>
         </footer>
     </div>
 </body>
+
 </html>

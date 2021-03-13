@@ -2,15 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommonCoin Homepage</title>
+<!--    <link rel="stylesheet" href="/home/koushal/CommanChain/templates/style.css">-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
- <h1>Hello Commonchain user</h1>
-<li>
-    <a href="/login">Login</a>
-</li>
-<li>
-    <a href="/register">Register</a>
-</li>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="{{ url_for('static', filename='logo.png') }}"></div>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <!-- <li><a href="tranhistory.html">Transaction History</a></li> -->
+            <!-- <li><a href="transaction.html">Make a Transaction</a></li> -->
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+        </ul>
+        <div class="rightnav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+    <!-- mycode -->
+    <div id="commonchain_title">CommonCoin</div>
+    <div class="alltogether">
+    <section id="aboutcrypto">
+        
+        <p class="text-big">CryptoCurrency: Future Of India</p>
+            <p class="text-small">Cryptocurrency is a form of digital money which is renowned for its secure nature and anonymity.
+                It is an internet-based medium of exchange which uses cryptographical functions to conduct financial transactions.
+                Cryptocurrencies leve <li><a href="login.html">Login</a></li>rage blockchain technology to gain decentralization
+                ,transparency, and immutability. </p>
+            
+            <div class="buttons">
+                <!-- <button class="btn">Subscribe</button> -->
+                <button class="videobtn"><a href="https://www.youtube.com/watch?v=8NgVGnX4KOw">Watch Video</a></button>
+            </div>
+
+
+    </section>
+    <div class="aboutcommoncoin">
+        
+            <p class="sectionTag text-big">About CommonCoin</p>
+            <p class="sectionSubTag text-small">
+                CommonCoin is a cryptocurrency developed to encourage usage of cashless modes of money tranfer and for the increase of decentralized and transparent money circulation.
+                You will be given a fixed amount of commoncoins when you create your account. You can transact with your fellow members in the commoncoin community through this website.
+                You will also be able to view your transaction history whenever required.  
+            </p>
+
+     <!-- </div>
+        <div class="commoncoinimg">
+            <img src="img/logo.png" alt="Cryptocurrency Image">
+        </div>
+    </div> -->
+ </div>
 </body>
 </html>
