@@ -96,7 +96,6 @@ def update_blockchain(blockchain):
 
 def check_chain():
     blockchain = Blockchain()
-    database = ["hello", "goodbye", "test", " here"]
 
     num = 0
 
