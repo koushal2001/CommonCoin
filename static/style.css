@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+body {
+    background: url(https://www.nasdaq.com/sites/acquia.prod/files/2020/11/09/cryptoLP%20banner%203%20jpg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#name {
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 80px;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: tan;
+    background-color: rgba(0, 0, 0);
+    font-size: 70px;
+    text-align: center;
+}
+
+.logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 45%;
+    border: 3px solid white;
+    border-radius: 50px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    background: rgba(0, 0, 0);
+    
+}
+
+.nav-list {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 26px 30px;
+    border: 1px grey;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-list li a:hover {
+    color: grey;
+}
+
+.rightnav {
+    width: 50%;
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+#search {
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+
+.background {
+    background-size: cover;
+    background-blend-mode: darken;
+    background-image: url(https://www.nasdaq.com/sites/acquia.prod/files/2020/11/09/cryptoLP%20banner%203%20jpg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;;
+}
+
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: 50%;
+}
+
+.firstSection {
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.671);
+}
+
+.firstHalf {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secondHalf {
+    padding-right: 10px;
+}
+
+.secondHalf img {
+    width: 70%;
+    border: 4px solid wheat;
+    border-radius: 150px;
+    display: block;
+    margin: auto;
+}
+
+
+.btn {
+    padding: 8px 20px;
+    margin: 10px 3px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.178);
+    color: rgb(179, 245, 218);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.247);
+}
+
+.sectionTag {
+    color: white;
+}
+
+.sectionSubTag {
+    color: white;
+}
+
+.paras {
+    width: 30%;
+    padding: 20px;
+}
+
+.secRight {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0.671);
+    padding: 0px;
+}
+
+.imgFluid {
+    width: 231px;
+    padding: 0px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 4px solid white;
+    border-radius: 30px;
+}
+
+/* logout page */
+#userdetails
+    {
+        background-color: hsla(120, 17%, 91%, 0.5);
+        text-align: center;
+        border-radius: 5px;        
+        max-width: fit-content;
+        padding: 10px;
+        margin:auto;
+        margin-top: 50px;
+
+    }
+    #actions
+    {
+        padding: 75px;
+        max-width: fit-content;
+        display: block;
+        box-sizing: border-box;
+        background-color: hsla(120, 17%, 91%, 0.6);
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 150px;
+        border-radius: 5px;
+    }
+    /* dashboard page */
+    #actions p{
+        font-size: x-large;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    #actions input
+    {
+        margin-top: 20px;;
+        padding:10px;
+        border-radius: 5px;
+        background-color: rgba(0, 255, 255, 0.884);
+        border-width: 5px;
+        font-size: larger;
+        font-weight: bold;
+        display: block;
+        box-sizing: border-box;
+
+    }
+    /* logout page */
+    #thankyou
+    {
+        padding:50px;
+        background-color: hsla(120, 17%, 91%, 0.5);
+        font-size: xx-large;
+        font-weight: bold;
+        text-align: center;
+        max-width: fit-content;
+        margin:auto;
+        margin-top: 30px;
+        border-radius: 5px;
+        
+    } 
+    .loginagain a{
+        margin-top: 10px;
+        font-size: large;
+        display: flex;
+    }
+    #loginagain_buttons
+    {
+        padding: 100px;
+        max-width: fit-content;
+        display: block;
+        box-sizing: border-box;
+        background-color: hsla(120, 17%, 91%, 0.6);
+        margin: auto;
+        margin-top: 150px;
+        margin-bottom: 150px;
+        border-radius: 5px;
+        
+    }
+    #loginagain_buttons form{
+        padding:10px;     
+    }
+    #loginagain_buttons form input{
+        padding:20px;
+        border-radius: 5px;
+        background-color: rgba(0, 255, 255, 0.884);
+        border-width: 5px;
+        font-size: larger;
+        font-weight: bold;
+
+    }
+    /* make a transaction page */
+    #title
+    {
+        margin: 50px 30px;
+        text-align: center;
+    }
+    #transactbtn {
+        display: block;
+        background-color: #49c1a2;
+        margin: auto;
+        color: white;
+        padding:10px;
+            
+    }
+    #transactbtn:hover {
+        background-color: #37a08e;
+    }
+    .formwrap_transaction
+        {
+            border:1px black solid;
+            margin:auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border-radius: 5px;
+            padding:100px;
+            display: block;
+            max-width: fit-content;
+            background-color: hsla(120, 17%, 91%, 0.7);
+        }
+
+        .form-element label
+        {
+            
+            margin: 10px;
+            font-size: larger;
+            font-weight: bold;
+        }
+        .form-element input
+        {
+            margin: 10px;
+            width: 90%;
+            padding:10px;
+        }
+        .form-element p{
+            margin: 10px;
+            font-weight: 500;
+        }
+     /* transaction history page */
+     .tran-block
+       {
+            margin:100px;
+            padding:50px;
+            border: 50px red;
+            background-color: whitesmoke;
+            /* box-sizing: border-box; */
+            width: 50%;
+            max-width: fit-content;
+       } 
+       /* homepage */
+       #commonchain_title
+       {
+           margin:auto;
+           margin-top: 20px;
+           padding:40px;
+           background-color: black;
+           color: cyan;
+           text-align: center;
+           max-width: 60%;
+           font-size:50px;
+           font-family: 'Times New Roman', Times, serif;
+           border-radius: 10px;
+           border-color: tan;
+           border-width: medium;
+           font-weight: bolder;
+           
+       }
+       .alltogether
+       {
+        background-color: rgba(0, 0, 0, 0.76);
+       }
+       #aboutcrypto
+       {
+           /* background-color: rgba(0, 0, 0, 0.76); */
+           margin: 20px 0px;
+           margin-left: 20px;
+           margin-right: 450px;
+           padding:20px;
+           color: white;
+       }
+       .text-big {
+        font-size: 35px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+    
+    }
+    
+    .text-small {
+        font-size: 18px;
+    }
+    .videobtn
+    {
+        padding: 8px 20px;
+        margin: 10px 3px;
+        border: 2px solid white;
+        border-radius: 8px;
+        /* background-color:rgba(0, 255, 255, 0.781) */
+        color: rgb(179, 245, 218);
+        cursor: pointer;
+
+    }
+    .videobtn a{
+        text-decoration: none;
+        font-size: larger;
+    }
+    .aboutcommoncoin
+       {
+           display: block;
+           /* background-color: rgba(0, 0, 0, 0.733); */
+           margin: 30px 0px;
+           margin-left: 600px;
+           margin-right: 20px;
+           padding:20px;
+           color: white;
+       }
+    
+     .commoncoinimg
+     {
+        
+            /* width: 45%;
+            border: 3px solid white;
+            border-radius: 50px;
+            width: 20%;
+     */
+        
+     }  
+     /* .commoncoinimg img{
+         width:100px;
+         border-radius: 5px;
+     } */
+     #teammembers
+     {
+        margin:30px 50px;
+        padding:0px;
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.801);
+        align-items: center;
+        justify-content: center;
+     }
+     .profile
+     {
+         border: white 2px solid;
+         margin:100px 20px;
+         color: white;
+         padding:70px;
+         text-align: center;
+         
+     }
+     .photo img
+     {
+        width: 300px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        
+        
+     }

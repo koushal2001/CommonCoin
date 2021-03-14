@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Transaction</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo"><img src="img/logo.png" alt="logo"></div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="transaction.html">Make a Transaction</a></li>
+            <li><a href="tranhistory.html">Transaction History</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="logout.html">Logout</a></li>
+            <!-- <li><a href="login.html">Login</a></li> -->
+            <!-- <li><a href="signup.html">Sign Up</a></li> -->
+        </ul>
+        <div class="rightnav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+    <div id="container">
+       
+        <div class="formwrap_transaction">
+            <div id="title">
+                <h1>Make a secure Transaction</h1>
+            </div>
+            <form>
+                <div class="form-element">
+                    <div class="form-element label">
+                        <label>Send To</label> <br>
+                        <p>Enter the username of the reciever</p>
+                    </div>
+                    <div class="form-element input">
+                        <input name="reciever name" type="text">
+                    </div>
+                    
+                </div>
+                <div class="form-element">
+                    <div class="form-element label">
+                        <label>Amount</label><br>
+                        <p>Enter the amount to be sent</p>
+                    </div>
+                    <div class="form-element input">
+                        <input name="amount" type="number">
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="form-element label">
+                        <label>Confirm Amount</label><br>
+                        <p>Re-enter the amount to be sent</p>
+                    </div>
+                    <div class="form-element input">
+                        <input name="confirm amount" type="number">
+                    </div>
+                </div>
+                <button type="submit" id="transactbtn">Submit</button>
+                
+            </form>
+            
+            
+            
+            
+        </div>
+
+    </div>
+    
+</body>
+</html>
