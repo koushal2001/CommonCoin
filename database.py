@@ -106,6 +106,7 @@ def check_chain():
     update_blockchain(blockchain)
 
 def send_money(sender, recipient, amount):
+
     #verify that the amount is an integer or floating value
     try: amount = float(amount)
     except ValueError:
@@ -119,7 +120,6 @@ def send_money(sender, recipient, amount):
 
     elif isnewuser(recipient):
         raise InvalidTransactionException("User Does Not Exist.")
-
     blockchain = data_blockchain()
     number = len(blockchain.chain) + 1
     data = "%s-->%s-->%s" %(sender, recipient, amount)

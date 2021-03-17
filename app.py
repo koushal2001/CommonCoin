@@ -86,11 +86,11 @@ def transaction():
     form = SendMoneyForm(request.form)
     balance = get_balance(session.get('username'))
 
-
     if request.method == 'POST':
         try:
-            send_money(session.get('username'), form.username.data, form.amount.data)
-            #
+            print(form.username.data,form.amount.data,form.amount2.data)
+            if(form.amount.data == form.amount2.data):
+                send_money(session.get('username'), form.username.data, form.amount.data)
         except Exception as e:
             flash(str(e), 'danger')
 
