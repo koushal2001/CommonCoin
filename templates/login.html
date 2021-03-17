@@ -110,14 +110,14 @@
 <body>
     <nav class="navbar background">
         <ul class="nav-list">
-            <div class="logo"><img src="img/logo.png" alt="logo"></div>
-            <li><a href="index.html">Home</a></li>
+            <div class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="logo"></div>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
             <!-- <li><a href="tranhistory.html">Transaction History</a></li> -->
             <!-- <li><a href="transaction.html">Make a Transaction</a></li> -->
-            <li><a href="contactus.html">Contact Us</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
+<!--            <li><a href="contactus.html">Contact Us</a></li>-->
+<!--            <li><a href="{{ url_for('login') }}">Login</a></li>-->
             <li><a href="{{ url_for('register') }}">Sign Up</a></li>
-             <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li><!--temporary -->
+<!--             <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>&lt;!&ndash;temporary &ndash;&gt;-->
         </ul>
         <div class="rightnav">
             <input type="text" name="search" id="search">
@@ -127,7 +127,7 @@
     <!-- <div id="name">COMMONCHAIN</div> -->
     <div id="container">
         <div class="form-wrap">
-            <form>
+        <form method="POST" action="">
                 <h1>Log In</h1>
                 <div class="form-elements">
                     <label for="username"><strong class="label">Username</strong></label><br>
