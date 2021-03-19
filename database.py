@@ -145,6 +145,8 @@ def get_transactions(username):
     blockchain = data_blockchain()
     transactions=[]
     for block in blockchain.chain:
+        if(len(transactions)==15):
+            break
         data = block.data.split("-->")
         timestamp=block.time
         data.append(timestamp)

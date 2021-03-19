@@ -47,7 +47,6 @@ def register():
         password=form.password.data
         confirm=form.confirm.data
         # saveword=sha256_crypt.encrypt(password)
-        print("djn ",name,email,username)
         if(password == confirm):
             step=True
         if step and isnewuser(username):
@@ -96,10 +95,16 @@ def transaction():
 
         return redirect(url_for('transaction'))
 
-    return render_template('transaction.html', balance=balance, form=form, page='transaction')
+    return render_template('transaction.html', balance=balance, form=form)#, page='transaction')
 
-def transaction_history():
-    pass
+
+@app.route("/transactionhistory", methods = ['GET', 'POST'])
+@is_logged_in
+def transactionhistory():
+    username=session.get('username')
+    list=get_transactions(username)
+    balance=get_balance(username)
+    return render_template('tranhistory.html',list=list,username=username,balance=balance)
 @app.route("/logout")
 @is_logged_in
 def logout():
