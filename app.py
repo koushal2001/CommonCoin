@@ -12,7 +12,7 @@ app.config['MYSQL_USER']='root'
 app.config['MYSQL_PASSWORD'] = '1234'
 app.config['MYSQL_DB'] = 'commonchain'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-
+#needs editing
 mysql = MySQL(app)
 
 def is_logged_in(f):
